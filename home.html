@@ -35,14 +35,14 @@
                 </div>
             </div>
             <div id="buton">            
-                <button class="btn" id="BotonCodifica" type="button" onclick="getTextFromHTML()" >Decodificar</button>
-                <button class="btn" id="BotonRecodifica" type="button" onclick="getTextAgain()" >De nuevo</button>                
+                <button class="btn" id="BotonCodifica" type="button" onclick="decodifica()" >Decodificar</button>
+                <button class="btn" id="BotonRecodifica" type="button" onclick="reDecodifica()" >De nuevo</button>                
             </div>
         </div>
     </form>
     <div class="alfabeto">
         <div>
-            <h3>Letras a conservar</h3>
+            <h3>Elige las letras a conservar</h3>
             <output id="OutputToChange" type="text"></output>
         </div>
         <div class="botones">
@@ -72,6 +72,8 @@
             <div><button class="btnAlfabeto" type="button" onclick="getLetras('x')">x</button></div>
             <div><button class="btnAlfabeto" type="button" onclick="getLetras('y')">y</button></div>
             <div><button class="btnAlfabeto" type="button" onclick="getLetras('z')">z</button></div>
+            <div><button class="btnAlfabeto" type="button" onclick="getLetras(' ')"> </button></div>
+
         </div>
     </div>
     <div>
