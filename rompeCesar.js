@@ -1,4 +1,4 @@
-/* FUNCIONES DEL PROGRAMA*/
+ /* FUNCIONES DEL PROGRAMA*/
 
 
 var mostFrecuent = [" ",
@@ -9,8 +9,9 @@ var mostFrecuent = [" ",
     "v","y","q","h",
     "f","z","j","ñ",
     "x","w","k"] //array ordenado de las letras mas frecuentes
-
+var indexCambiados = []
 var letrasElegidas = []
+var intercambios = []
 const originMF = mostFrecuent 
 var frecuentesTXT = [] //obtiene las letras mas frecuetnes del texto codificado original
 var intentos = 0
@@ -169,10 +170,10 @@ function reRemplaza (textoSemiDecodificado){
     for (i=0;i<textoSemiDecodificado.length;i++){
         idx = findWithAttr(cambios,"original",textoSemiDecodificado[i])
         if(idx >= 0){ //o sea que la letra del texto esta en los cambios por hacer
-            textoSemiDecodificado = setCharAt(textoSemiDecodificado,i,cambios[idx].nueva) 
+            textoSemiDecodificado = setCharAt(textoSemiDecodificado,i,cambios[idx].nueva)
         }
     }
-    console.log(textoSemiDecodificado)
+    //console.log(textoSemiDecodificado)
     return textoSemiDecodificado;
 }
 
@@ -189,7 +190,21 @@ function decodifica(){
 function reDecodifica(){
     const textoSemiDecodificado = document.getElementById("OutputResultado").value;
     const resultado = reRemplaza(textoSemiDecodificado)
-    //OutputResultado.value = resultado
+    OutputResultado.value = resultado
+}
+
+//cambia el par elegido
+
+function cambiaElegidas(){
+    var textoSemiDecodificado = document.getElementById("OutputResultado").value;
+    for (let j=0; j<textoSemiDecodificado.length;j++){
+        if (textoSemiDecodificado[j] == intercambios[0] && !indexCambiados.includes(j)){
+            textoSemiDecodificado = setCharAt(textoSemiDecodificado,j,intercambios[1])
+            indexCambiados.push(j)
+        }
+    }
+    intercambios.length = 0
+    OutputResultado.value = textoSemiDecodificado
 }
 
 //obtiene las letras presionadas para conservar 
@@ -201,7 +216,21 @@ function getLetras(letra){
     else{
         letrasElegidas.splice(index,1) // si existe lo saca del array
     }
-    OutputToChange.value = letrasElegidas //pone el contenido del array en el cuadro
+    OutputToKeep.value = letrasElegidas //pone el contenido del array en el cuadro
+}
+
+//obtiene par de letras a intercambiar
+function changeLetra(letra){
+    OutputToChange.value = ""
+    intercambios.push(letra)
+    console.log(intercambios)
+    for (let i = 0;i<intercambios.length;i++){
+        if(i%2==0){
+            OutputToChange.value += intercambios[i] + " <=> "
+        }else{
+            OutputToChange.value += intercambios[i] + ", "
+        }
+    }
 }
 
 /*
