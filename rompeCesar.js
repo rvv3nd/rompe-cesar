@@ -1,3 +1,6 @@
+/* FUNCIONES DEL PROGRAMA*/
+
+
 var mostFrecuent = [" ",
     "e","a","o","s",
     "r","n","i","d",
