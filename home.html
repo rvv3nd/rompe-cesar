@@ -11,10 +11,12 @@
         $(document).ready(function(){
             $(".alfabeto").hide();
             $("#BotonRecodifica").hide();
+            $("#BotonCambia").hide();
           $("#BotonCodifica").click(function(){
             $("#BotonCodifica").hide();
             $(".alfabeto").show();
             $("#BotonRecodifica").show();
+            $("#BotonCambia").show();
           });
         });
     </script>
@@ -35,45 +37,88 @@
                     </div>
                 </div>
                 <div id="buton">            
-                    <button class="btn" id="BotonCodifica" type="button" onclick="decodifica()" >Decodificar</button>
-                    <button class="btn" id="BotonRecodifica" type="button" onclick="reDecodifica()" >De nuevo</button>                
+                    <button class="btn" id="BotonCodifica" type="button" onclick="decodifica()" >Decodificar</button>                
+                </div>
+                <div id=buton>
+                    <button class="btn" id="BotonRecodifica" type="button" onclick="reDecodifica()" >Decodifica de nuevo</button>
+                    <button class="btn" id="BotonCambia" type="button" onclick="cambiaElegidas()" >Intercambia letras</button>
                 </div>
             </div>
         </form>
-        <div class="alfabeto">
-            <div>
-                <h3>Elige las letras a conservar</h3>
-                <output id="OutputToChange" type="text"></output>
+        <div class="opciones">
+            <div class="elegidas">
+                <div class="alfabeto">
+                    <div>
+                        <h3>Elige las letras a conservar</h3>
+                        <output id="OutputToKeep" type="text"></output>
+                    </div>
+                    <div class="botones">
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('a')">a</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('b')">b</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('c')">c</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('d')">d</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('e')">e</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('f')">f</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('g')">g</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('h')">h</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('i')">i</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('j')">j</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('k')">k</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('l')">l</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('m')">m</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('n')">n</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('o')">o</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('p')">p</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('q')">q</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('r')">r</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('s')">s</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('t')">t</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('u')">u</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('v')">v</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('w')">w</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('x')">x</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('y')">y</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras('z')">z</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="getLetras(' ')">_</button> </button></div>
+                    </div>
+                </div>
             </div>
-            <div class="botones">
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('a')">a</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('b')">b</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('c')">c</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('d')">d</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('e')">e</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('f')">f</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('g')">g</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('h')">h</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('i')">i</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('j')">j</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('k')">k</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('l')">l</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('m')">m</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('n')">n</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('o')">o</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('p')">p</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('q')">q</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('r')">r</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('s')">s</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('t')">t</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('u')">u</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('v')">v</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('w')">w</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('x')">x</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('y')">y</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras('z')">z</button></div>
-                <div><button class="btnAlfabeto" type="button" onclick="getLetras(' ')">_</button> </button></div>
-
+            <div class="cambios">
+                <div class="alfabeto">
+                    <div>
+                        <h3>Elige dos letras a intercambiar</h3>
+                        <output id="OutputToChange" type="text"></output>
+                    </div>
+                    <div class="botones">
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('a')">a</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('b')">b</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('c')">c</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('d')">d</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('e')">e</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('f')">f</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('g')">g</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('h')">h</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('i')">i</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('j')">j</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('k')">k</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('l')">l</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('m')">m</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('n')">n</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('o')">o</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('p')">p</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('q')">q</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('r')">r</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('s')">s</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('t')">t</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('u')">u</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('v')">v</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('w')">w</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('x')">x</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('y')">y</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra('z')">z</button></div>
+                        <div><button class="btnAlfabeto" type="button" onclick="changeLetra(' ')">_</button> </button></div>
+                    </div>
+                </div>
             </div>
         </div>
     <div class="resultado">

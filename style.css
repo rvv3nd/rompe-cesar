@@ -29,6 +29,17 @@ body{
       align-items: center;
 }
 
+.opciones {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "elegidas cambios"; 
+}
+.elegidas { grid-area: elegidas; }
+.cambios { grid-area: cambios; }
+
 .subtitle { 
     grid-area: subtitle;
 }
@@ -48,14 +59,19 @@ body{
 .buton { grid-area: buton; }
 
 input{
+    margin-top: 40px;
     padding: 18px;
     border-radius: 30px;
     width: 50rem;
 }
 input:focus {
     border: 5px solid #9CD08F;
+    outline: none;
   }
 .btn {
+    margin-top: 40px;
+    margin-right: 35px;
+    margin-left: 35px;
     width: 25rem;
     height: 4rem;
     border-radius: 1rem;
@@ -82,15 +98,16 @@ input:focus {
       "p q r s t"
       "u v w x y"
       "z . . . .";
-      width: 120px;
+    width: 120px;
 }
 
 .alfabeto{
-  background: white;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .resultado{
+  margin-top: 50px;
   margin-left: 50px;
 }
