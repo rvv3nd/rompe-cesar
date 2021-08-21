@@ -1,12 +1,17 @@
 header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 html{
     font-family: 'Poppins', sans-serif;
     overflow-y: scroll;
+    
+}
+
+body{
+  background: #CEA0AE;
 }
 
 .container {
@@ -19,13 +24,13 @@ html{
       "subtitle"
       "testoCod"
       "buton"; 
-    justify-content: center; 
-    align-content:inherit; 
-    align-items: center; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 }
 
 .subtitle { 
-    grid-area: subtitle; 
+    grid-area: subtitle;
 }
 .testoCod {
     display: grid; 
@@ -36,39 +41,36 @@ html{
       ". . ."
       ". input ."
       ". . ."; 
-    grid-area: testoCod; 
+    grid-area: testoCod;
+    align-items: center;
+    justify-items: center; 
   }
 .buton { grid-area: buton; }
 
 input{
-    margin: 10px;
     padding: 18px;
     border-radius: 30px;
-    width: 80%;
+    width: 50rem;
 }
 input:focus {
-    border: 5px solid greenyellow;
+    border: 5px solid #9CD08F;
   }
 .btn {
-    width: 15rem;
+    width: 25rem;
     height: 4rem;
     border-radius: 1rem;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: .3s ease;
 }
 .btn:hover{
-    background: purple;
+    background: #684551;
     color: white;
     border: 1px solid black;
 }
 
 .botones {
     display: grid;
-    margin-top: 40px;
+    margin-top: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
@@ -81,4 +83,14 @@ input:focus {
       "u v w x y"
       "z . . . .";
       width: 120px;
+}
+
+.alfabeto{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultado{
+  margin-left: 50px;
 }
