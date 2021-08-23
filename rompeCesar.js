@@ -203,6 +203,7 @@ function cambiaElegidas(){
             indexCambiados.push(j)
         }
     }
+    letrasElegidas.push(intercambios[1])
     intercambios.length = 0
     OutputResultado.value = textoSemiDecodificado
 }
